@@ -1678,6 +1678,142 @@
   animation: spin 0.2s linear infinite;
 }
 
+/* 上传弹窗样式 */
+.upload-modal {
+  width: 480px;
+}
+
+.upload-content {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.upload-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upload-row label {
+  color: #00ff88;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.upload-row input[type="text"] {
+  background: #16213e;
+  border: 3px solid #e94560;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei", sans-serif;
+  outline: none;
+}
+
+.upload-row input[type="text"]::placeholder {
+  color: #666;
+}
+
+.upload-row input[type="text"]:focus {
+  border-color: #00ff88;
+}
+
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-option {
+  background: #16213e;
+  border: 3px solid #666;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-option:hover {
+  border-color: #e94560;
+}
+
+.tag-option.selected {
+  background: #e94560;
+  border-color: #00ff88;
+  color: #fff;
+}
+
+.img-upload-box,
+.avatar-upload-box {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  background: #16213e;
+  border: 3px dashed #e94560;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.img-upload-box input,
+.avatar-upload-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.img-preview img,
+.avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-preview span,
+.avatar-preview span {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.img-preview {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #0f3460;
+  border: 3px solid #00ff88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-preview img {
+  border-radius: 50%;
+}
+
+.upload-submit {
+  background: linear-gradient(135deg, #e94560 0%, #c44569 100%);
+  border-color: #fff;
+  font-size: 20px;
+  padding: 14px 40px;
+  align-self: center;
+}
+
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }

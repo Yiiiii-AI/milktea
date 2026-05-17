@@ -185,6 +185,9 @@
             </div>
           </div>
 
+          <!-- 用户上传帖子容器 -->
+          <div class="pr-grid" id="userPostsGrid"></div>
+
           <!-- 第二行卡片 -->
           <div class="pr-grid">
             <!-- 卡片6 -->
@@ -392,6 +395,50 @@
           btn.textContent = '已加载全部精彩内容';
         }, 1200);
       }
+
+      // 加载用户上传的帖子
+      function loadUserPosts() {
+        const posts = JSON.parse(localStorage.getItem('userPosts') || '[]');
+        const container = document.getElementById('userPostsGrid');
+        if (!posts.length) return;
+
+        posts.forEach(post => {
+          const card = document.createElement('div');
+          card.className = 'pr-card';
+          card.onclick = function() { openCard(this); };
+
+          const tagsHtml = post.tags.map((tag, i) => {
+            const type = i === 0 ? 'pr-tag--sugar' : i === 1 ? 'pr-tag--ice' : 'pr-tag--add';
+            return '<span class="pr-tag ' + type + '">' + tag + '</span>';
+          }).join('');
+
+          card.innerHTML = `
+            <div class="pr-card-img-wrap">
+              <img src="${post.image}" class="pr-card-img" alt="${post.name}" />
+            </div>
+            <div class="pr-card-body">
+              <p class="pr-card-name">${post.brand}·${post.name}</p>
+              <div class="pr-card-tags">${tagsHtml}</div>
+              <div class="pr-card-footer">
+                <div class="pr-card-user">
+                  ${post.avatar
+                    ? '<img src="' + post.avatar + '" class="pr-card-avatar" alt="" />'
+                    : '<div class="pr-card-avatar" style="background:#e94560;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;">' + (post.username ? post.username.charAt(0).toUpperCase() : 'U') + '</div>'}
+                  <span class="pr-card-username">${post.username}</span>
+                </div>
+                <div class="pr-card-likes">
+                  <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                  <span class="pr-card-like-num">0</span>
+                </div>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // 页面加载时渲染用户帖子
+      loadUserPosts();
     </script>
   </body>
 </html>

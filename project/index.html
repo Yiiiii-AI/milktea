@@ -59,7 +59,7 @@
           <button class="pixel-btn gacha-btn" id="openGacha">抽盲盒</button>
         </div>
         <div class="frame21">
-          <a class="frame19" href="./pairing.html" style="text-decoration:none;">
+          <a class="frame19" href="./pairing.html" id="openUpload" style="text-decoration:none;">
             <img
               src="./static/images/mou9e3r0-ro0wm87.svg"
               class="frame7"
@@ -639,6 +639,66 @@
       </div>
     </div>
 
+    <!-- 上传弹窗 -->
+    <div class="gacha-overlay" id="uploadOverlay">
+      <div class="gacha-modal upload-modal">
+        <div class="gacha-header">
+          <span class="gacha-title">发布奶茶喝法</span>
+          <button class="gacha-close" id="closeUpload">X</button>
+        </div>
+        <div class="upload-content">
+          <div class="upload-row">
+            <label>奶茶品牌</label>
+            <input type="text" id="inputBrand" placeholder="如：喜茶、古茗" />
+          </div>
+          <div class="upload-row">
+            <label>奶茶名称</label>
+            <input type="text" id="inputName" placeholder="如：杨枝甘露" />
+          </div>
+          <div class="upload-row">
+            <label>喝法标签</label>
+            <div class="tag-grid" id="tagGrid">
+              <span class="tag-option" data-tag="少冰">少冰</span>
+              <span class="tag-option" data-tag="标准冰">标准冰</span>
+              <span class="tag-option" data-tag="去冰">去冰</span>
+              <span class="tag-option" data-tag="七分糖">七分糖</span>
+              <span class="tag-option" data-tag="三分糖">三分糖</span>
+              <span class="tag-option" data-tag="五分糖">五分糖</span>
+              <span class="tag-option" data-tag="正常糖">正常糖</span>
+              <span class="tag-option" data-tag="波霸">波霸</span>
+              <span class="tag-option" data-tag="珍珠">珍珠</span>
+              <span class="tag-option" data-tag="椰果">椰果</span>
+              <span class="tag-option" data-tag="芋圆">芋圆</span>
+              <span class="tag-option" data-tag="布丁">布丁</span>
+              <span class="tag-option" data-tag="奶盖">奶盖</span>
+              <span class="tag-option" data-tag="奶芙">奶芙</span>
+            </div>
+          </div>
+          <div class="upload-row">
+            <label>上传图片</label>
+            <div class="img-upload-box" id="imgUploadBox">
+              <input type="file" id="inputImage" accept="image/*" />
+              <div class="img-preview" id="imgPreview"></div>
+            </div>
+          </div>
+          <div class="upload-row">
+            <label>用户头像</label>
+            <div class="avatar-upload-box" id="avatarUploadBox">
+              <input type="file" id="inputAvatar" accept="image/*" />
+              <div class="avatar-preview" id="avatarPreview">
+                <span>点击上传头像</span>
+              </div>
+            </div>
+          </div>
+          <div class="upload-row">
+            <label>用户名</label>
+            <input type="text" id="inputUsername" placeholder="给自己取个昵称" />
+          </div>
+          <button class="pixel-btn upload-submit" id="submitPost">一键上传</button>
+        </div>
+      </div>
+    </div>
+
     <script>
       const gachaData = {
         names: [
@@ -723,6 +783,114 @@
         if (e.target === overlay) closeModal();
       });
       drawBtn.addEventListener('click', draw);
+
+      // 上传弹窗逻辑
+      const uploadOverlay = document.getElementById('uploadOverlay');
+      const openUploadBtn = document.getElementById('openUpload');
+      const closeUploadBtn = document.getElementById('closeUpload');
+      const tagGrid = document.getElementById('tagGrid');
+      const inputImage = document.getElementById('inputImage');
+      const imgPreview = document.getElementById('imgPreview');
+      const inputAvatar = document.getElementById('inputAvatar');
+      const avatarPreview = document.getElementById('avatarPreview');
+      const submitBtn = document.getElementById('submitPost');
+
+      let selectedTags = [];
+      let imageData = '';
+      let avatarData = '';
+
+      openUploadBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        uploadOverlay.classList.add('active');
+      });
+
+      closeUploadBtn.addEventListener('click', () => {
+        uploadOverlay.classList.remove('active');
+      });
+
+      uploadOverlay.addEventListener('click', (e) => {
+        if (e.target === uploadOverlay) uploadOverlay.classList.remove('active');
+      });
+
+      tagGrid.addEventListener('click', (e) => {
+        if (e.target.classList.contains('tag-option')) {
+          e.target.classList.toggle('selected');
+          const tag = e.target.dataset.tag;
+          if (selectedTags.includes(tag)) {
+            selectedTags = selectedTags.filter(t => t !== tag);
+          } else {
+            selectedTags.push(tag);
+          }
+        }
+      });
+
+      inputImage.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            imageData = ev.target.result;
+            imgPreview.innerHTML = '<img src="' + imageData + '" />';
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      inputAvatar.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            avatarData = ev.target.result;
+            avatarPreview.innerHTML = '<img src="' + avatarData + '" />';
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      submitBtn.addEventListener('click', () => {
+        const brand = document.getElementById('inputBrand').value.trim();
+        const name = document.getElementById('inputName').value.trim();
+        const username = document.getElementById('inputUsername').value.trim();
+
+        if (!brand || !name || !username) {
+          alert('请填写品牌、奶茶名称和用户名');
+          return;
+        }
+
+        if (!imageData) {
+          alert('请上传奶茶图片');
+          return;
+        }
+
+        const post = {
+          id: Date.now(),
+          brand,
+          name,
+          tags: selectedTags,
+          image: imageData,
+          avatar: avatarData || '',
+          username,
+          timestamp: new Date().toLocaleString()
+        };
+
+        let posts = JSON.parse(localStorage.getItem('userPosts') || '[]');
+        posts.unshift(post);
+        localStorage.setItem('userPosts', JSON.stringify(posts));
+
+        // 重置表单
+        document.getElementById('inputBrand').value = '';
+        document.getElementById('inputName').value = '';
+        document.getElementById('inputUsername').value = '';
+        selectedTags = [];
+        document.querySelectorAll('.tag-option').forEach(el => el.classList.remove('selected'));
+        imageData = '';
+        avatarData = '';
+        imgPreview.innerHTML = '';
+        avatarPreview.innerHTML = '<span>点击上传头像</span>';
+        uploadOverlay.classList.remove('active');
+        alert('发布成功！');
+      });
     </script>
   </body>
 </html>

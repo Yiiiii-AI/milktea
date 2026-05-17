@@ -56,6 +56,7 @@
             alt=""
           />
           <p class="text10">今天喝点啥？</p>
+          <button class="pixel-btn gacha-btn" id="openGacha">抽盲盒</button>
         </div>
         <div class="frame21">
           <a class="frame19" href="./pairing.html" style="text-decoration:none;">
@@ -612,5 +613,116 @@
         </div>
       </div>
     </div>
+
+    <!-- 盲盒弹窗 -->
+    <div class="gacha-overlay" id="gachaOverlay">
+      <div class="gacha-modal">
+        <div class="gacha-header">
+          <span class="gacha-title">今日奶茶盲盒</span>
+          <button class="gacha-close" id="closeGacha">X</button>
+        </div>
+        <div class="gacha-content">
+          <div class="gacha-box" id="gachaBox">
+            <div class="gacha-box-inner">
+              <div class="gacha-question">?</div>
+            </div>
+          </div>
+          <button class="pixel-btn draw-btn" id="drawBtn">开始抽取</button>
+          <div class="result-card" id="resultCard" style="display:none;">
+            <div class="result-header">今日你的奶茶是</div>
+            <div class="result-name" id="resultName"></div>
+            <div class="result-details" id="resultDetails"></div>
+            <div class="result-tags" id="resultTags"></div>
+            <div class="result-comment" id="resultComment"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const gachaData = {
+        names: [
+          "芋泥波波奶茶", "杨枝甘露", "珍珠奶盖绿茶", "茉莉奶绿", "血糯米奶茶",
+          "芝芝莓莓", "椰椰拿铁", "抹茶红豆冰", "桂花乌龙鲜奶", "焦糖布丁奶茶",
+          "燕麦芋泥", "柠檬绿茶", "芒果西米露", "红豆薏米奶茶", "茉莉花茶冻",
+          "榛果拿铁", "杨梅气泡饮", "葡萄柚绿", "黑糖脏脏", "杏仁豆腐奶茶"
+        ],
+        sugar: ["零糖", "三分糖", "五分糖", "七分糖", "少糖", "正常糖"],
+        ice: ["去冰", "少冰", "标准冰", "常温", "热饮", "温热"],
+        toppings: [
+          "波霸", "珍珠", "椰果", "芋圆", "布丁", "奶盖", "奶芙", "西米露",
+          "红豆", "燕麦", "奥利奥", "坚果碎", "椰丝", "芝士", "冻冻"
+        ],
+        comments: [
+          "今日最佳选择！", "这杯真的绝了！", "宝藏喝法快收藏！",
+          "喝完心情美美哒~", "隔壁小孩都馋哭了！", "店员看了都说懂行！",
+          "明天还要来一杯！", "绝绝子！YYDS！", "这波赢麻了！"
+        ]
+      };
+
+      const overlay = document.getElementById('gachaOverlay');
+      const openBtn = document.getElementById('openGacha');
+      const closeBtn = document.getElementById('closeGacha');
+      const drawBtn = document.getElementById('drawBtn');
+      const gachaBox = document.getElementById('gachaBox');
+      const resultCard = document.getElementById('resultCard');
+
+      function random(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      function generateResult() {
+        const name = random(gachaData.names);
+        const sugar = random(gachaData.sugar);
+        const ice = random(gachaData.ice);
+        const topping1 = random(gachaData.toppings);
+        let toppings = [topping1];
+        if (Math.random() > 0.5) {
+          toppings.push(random(gachaData.toppings.filter(t => t !== topping1)));
+        }
+        const comment = random(gachaData.comments);
+
+        return { name, sugar, ice, toppings, comment };
+      }
+
+      function renderResult(result) {
+        document.getElementById('resultName').textContent = result.name;
+        document.getElementById('resultDetails').innerHTML =
+          '<span class="tag">' + result.sugar + '</span>' +
+          '<span class="tag">' + result.ice + '</span>' +
+          '<span class="tag">' + result.toppings.join('+') + '</span>';
+        document.getElementById('resultComment').textContent = result.comment;
+      }
+
+      function openModal() {
+        overlay.classList.add('active');
+        gachaBox.style.display = 'block';
+        resultCard.style.display = 'none';
+        drawBtn.style.display = 'inline-block';
+      }
+
+      function closeModal() {
+        overlay.classList.remove('active');
+      }
+
+      function draw() {
+        gachaBox.classList.add('spinning');
+        drawBtn.style.display = 'none';
+
+        setTimeout(() => {
+          gachaBox.classList.remove('spinning');
+          gachaBox.style.display = 'none';
+          resultCard.style.display = 'block';
+          renderResult(generateResult());
+        }, 1500);
+      }
+
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      drawBtn.addEventListener('click', draw);
+    </script>
   </body>
 </html>

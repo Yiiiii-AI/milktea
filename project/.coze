@@ -1,0 +1,12 @@
+[project]
+sub_id = "f6d3cce3"
+name = "milk-tea-museum"
+requires = []
+project_type = "web"
+
+[preview]
+preview_enable = "enabled"
+
+[dev]
+build = ["bash", "scripts/coze-preview-build.sh"]
+run = ["bash", "scripts/coze-preview-run.sh"]

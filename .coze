@@ -1,0 +1,17 @@
+[project]
+requires = []
+project_type = "web"
+
+[preview]
+preview_enable = "enabled"
+
+[dev]
+build = ["bash", "scripts/coze-preview-build.sh"]
+run = ["bash", "scripts/coze-preview-run.sh"]
+
+[deploy]
+build = []
+run = ["bash", "scripts/coze-preview-run.sh"]
+
+[subprojects]
+path = ["project"]

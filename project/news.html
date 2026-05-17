@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>奶茶博物馆 - 奶茶资讯</title>
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/news.css" />
+  </head>
+  <body>
+    <div class="ns-page page-root">
+      <!-- 顶部导航 -->
+      <div class="ns-nav">
+        <div class="ns-nav-logo">
+          <img src="./static/images/mou9e9di-x9rffmy.png" class="ns-nav-icon" alt="奶茶博物馆" />
+          <p class="ns-nav-name">奶茶博物馆</p>
+        </div>
+        <div class="ns-nav-links">
+          <a class="ns-nav-link" href="./index.html">首页&nbsp;</a>
+          <a class="ns-nav-link" href="./map.html">地图&nbsp;</a>
+          <a class="ns-nav-link" href="./pairing.html">搭配&nbsp;</a>
+          <a class="ns-nav-link" href="./ranking.html">排行榜&nbsp;</a>
+          <a class="ns-nav-link ns-nav-link--active" href="./news.html">关于</a>
+        </div>
+        <div class="ns-nav-search">
+          <img src="./static/images/mou9e3r0-au2v2zb.svg" class="ns-nav-search-icon" alt="" />
+          <p class="ns-nav-search-text">搜索奶茶品牌或口味...</p>
+        </div>
+        <div class="ns-nav-btn">
+          <p class="ns-nav-btn-text">登录 / 注册</p>
+        </div>
+      </div>
+
+      <!-- 主内容区 -->
+      <div class="ns-main">
+        <!-- 页面标题 -->
+        <div class="ns-header">
+          <h1 class="ns-title">奶茶最新资讯</h1>
+          <p class="ns-subtitle">新鲜出炉的奶茶资讯 每日0点更新</p>
+        </div>
+
+        <!-- 分类筛选 -->
+        <div class="ns-filters">
+          <button class="ns-filter-btn ns-filter-btn--active" onclick="filterNews(this, 'all')">全部</button>
+          <button class="ns-filter-btn" onclick="filterNews(this, 'collab')">品牌联名</button>
+          <button class="ns-filter-btn" onclick="filterNews(this, 'newproduct')">新品上市</button>
+          <button class="ns-filter-btn" onclick="filterNews(this, 'store')">门店动态</button>
+          <button class="ns-filter-btn" onclick="filterNews(this, 'activity')">活动促销</button>
+        </div>
+
+        <!-- 资讯列表 -->
+        <div class="ns-list">
+
+          <!-- 第一行 -->
+          <div class="ns-row">
+            <div class="ns-item" data-category="collab">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-kcqn2ub.png" class="ns-item-img" alt="Hello Kitty × 喜茶" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">Hello Kitty × 喜茶 ｜ 联动指南：和 Hello kitty一起，走进心里的春天</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--collab">品牌联名</span>
+                    <span class="ns-item-date">2026.04.28</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+
+            <div class="ns-item" data-category="store">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-ebkd7zm.png" class="ns-item-img" alt="茶颜悦色深圳" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">刚刚！深圳茶颜悦色双店地址大公开！首店落户南山万象天地</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--store">门店动态</span>
+                    <span class="ns-item-date">2026.04.27</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二行 -->
+          <div class="ns-row">
+            <div class="ns-item" data-category="newproduct">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-cd2xo8x.png" class="ns-item-img" alt="瑞幸蛋仔派对" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">瑞幸 ｜ 蛋仔派对＋全新酸奶昔系列同步上线</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--newproduct">新品上市</span>
+                    <span class="ns-item-date">2026.04.26</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+
+            <div class="ns-item" data-category="collab">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-z16xou0.png" class="ns-item-img" alt="古茗小马宝莉" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">古茗 ｜ 小马宝莉 第二弹继续！全新夜光冰箱贴附赠毛绒徽章</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--collab">品牌联名</span>
+                    <span class="ns-item-date">2026.04.25</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 第三行 -->
+          <div class="ns-row">
+            <div class="ns-item" data-category="newproduct">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-8os0phf.png" class="ns-item-img" alt="霸王茶姬醒时春山" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">霸王茶姬 ｜ 醒时春山系列全国回归！龙井玄米酪新品来袭</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--newproduct">新品上市</span>
+                    <span class="ns-item-date">2026.04.24</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+
+            <div class="ns-item" data-category="collab">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-wnor2rv.png" class="ns-item-img" alt="奈雪拟泥nini" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">奈雪的茶 × 拟泥nini ｜ 世界地球日，把爱与美好装进小方瓶</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--collab">品牌联名</span>
+                    <span class="ns-item-date">2026.04.22</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 第四行 -->
+          <div class="ns-row">
+            <div class="ns-item" data-category="newproduct">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-nuld6hs.png" class="ns-item-img" alt="蜜雪冰城大橘" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">蜜雪冰城 ｜ 大橘新品上市啦！大橘大利，真有果粒</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--newproduct">新品上市</span>
+                    <span class="ns-item-date">2026.04.20</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+
+            <div class="ns-item" data-category="activity">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-p1rrs9q.png" class="ns-item-img" alt="一点点蜜桃" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">一点点 ｜ 春日赴约，一起甜蜜出"桃"！蜜桃系列全国上新</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--activity">活动促销</span>
+                    <span class="ns-item-date">2026.04.19</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 第五行 -->
+          <div class="ns-row">
+            <div class="ns-item" data-category="activity">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-whs7oyb.png" class="ns-item-img" alt="喜茶五一活动" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">喜茶 × 原神 ｜ 五一特别活动！购联名杯送原神贴纸 / 明信片</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--activity">活动促销</span>
+                    <span class="ns-item-date">2026.04.18</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+
+            <div class="ns-item" data-category="collab">
+              <div class="ns-item-inner">
+                <img src="./static/images/mou9e3rs-6yeb866.png" class="ns-item-img" alt="沪上阿姨三丽鸥" />
+                <div class="ns-item-body">
+                  <p class="ns-item-title">沪上阿姨 × 三丽鸥 ｜ 玉桂狗 / 库洛米限定杯套+挂件全国上线</p>
+                  <div class="ns-item-meta">
+                    <span class="ns-tag ns-tag--collab">品牌联名</span>
+                    <span class="ns-item-date">2026.04.17</span>
+                  </div>
+                </div>
+                <img src="./static/images/mou9e3r1-zphrvsw.svg" class="ns-item-arrow" alt="" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 分页 -->
+        <div class="ns-pagination">
+          <div class="ns-divider"></div>
+          <div class="ns-page-controls">
+            <button class="ns-page-btn ns-page-btn--prev" disabled>← 上一页</button>
+            <span class="ns-page-num ns-page-num--active">1</span>
+            <span class="ns-page-num">2</span>
+            <span class="ns-page-num">3</span>
+            <span class="ns-page-ellipsis">...</span>
+            <span class="ns-page-num">12</span>
+            <button class="ns-page-btn ns-page-btn--next">下一页 →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 页脚 -->
+      <div class="ns-footer">
+        <div class="ns-footer-logo">
+          <img src="./static/images/mou9e3rr-ir30nso.png" class="ns-footer-icon" alt="奶茶博物馆" />
+          <p class="ns-footer-name">奶茶博物馆</p>
+        </div>
+        <div class="ns-footer-about">
+          <p class="ns-footer-title">关于我们</p>
+          <p class="ns-footer-desc">关于奶茶的一切都在这座博物馆！<br />发现美味 · 记录生活 · 分享快乐</p>
+        </div>
+        <div class="ns-footer-contact">
+          <p class="ns-footer-title">联系我们</p>
+          <div class="ns-footer-icons">
+            <img src="./static/images/mou9e3r1-2b4t9te.svg" class="ns-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-4vmdcwg.svg" class="ns-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-7z5ee9b.svg" class="ns-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-d21x72i.svg" class="ns-footer-social" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function filterNews(btn, category) {
+        // 更新按钮状态
+        document.querySelectorAll('.ns-filter-btn').forEach(b => b.classList.remove('ns-filter-btn--active'));
+        btn.classList.add('ns-filter-btn--active');
+
+        // 过滤资讯项
+        document.querySelectorAll('.ns-item').forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // 隐藏空行
+        document.querySelectorAll('.ns-row').forEach(row => {
+          const visible = Array.from(row.querySelectorAll('.ns-item')).some(i => i.style.display !== 'none');
+          row.style.display = visible ? '' : 'none';
+        });
+      }
+    </script>
+  </body>
+</html>

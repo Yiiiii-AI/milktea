@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>奶茶博物馆 - 奶茶搭配</title>
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/pairing.css" />
+  </head>
+  <body>
+    <div class="pr-page page-root">
+      <!-- 顶部导航 -->
+      <div class="pr-nav">
+        <div class="pr-nav-brand">
+          <div class="pr-nav-logo">
+            <img src="./static/images/mou9e9di-x9rffmy.png" class="pr-nav-icon" alt="奶茶博物馆" />
+            <div class="pr-nav-brand-text">
+              <p class="pr-nav-name">奶茶隐藏喝法</p>
+              <p class="pr-nav-slogan">和全网一起分享宝藏搭配</p>
+            </div>
+          </div>
+        </div>
+        <div class="pr-nav-search">
+          <img src="./static/images/mou9e3r0-au2v2zb.svg" class="pr-nav-search-icon" alt="" />
+          <p class="pr-nav-search-text">搜索索你喜欢的奶茶品牌...</p>
+        </div>
+        <div class="pr-nav-links">
+          <a class="pr-nav-link pr-nav-link--active" href="./index.html">首页&nbsp;</a>
+          <a class="pr-nav-link" href="./map.html">地图&nbsp;</a>
+          <a class="pr-nav-link" href="./ranking.html">排行榜&nbsp;</a>
+          <a class="pr-nav-link" href="./news.html">关于&nbsp;</a>
+        </div>
+        <div class="pr-nav-actions">
+          <button class="pr-nav-publish">
+            <span class="pr-nav-publish-icon">+</span>
+            <span>发布</span>
+          </button>
+          <div class="pr-nav-avatar">
+            <img src="./static/images/mou9e3rs-j0if8y2.png" class="pr-nav-avatar-img" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 主内容区 -->
+      <div class="pr-main">
+        <!-- 今日最新搭配 -->
+        <div class="pr-section">
+          <div class="pr-section-header">
+            <div class="pr-section-title-wrap">
+              <h2 class="pr-section-title">今日最新搭配</h2>
+              <p class="pr-section-subtitle">每天都有新喝法等你发现，大家都在喝的神仙搭配</p>
+            </div>
+            <a class="pr-view-all" href="javascript:void(0)">
+              <span>查看全部</span>
+              <img src="./static/images/mou9e3r1-7eg7drt.svg" class="pr-view-all-icon" alt="" />
+            </a>
+          </div>
+
+          <!-- 第一行卡片 -->
+          <div class="pr-grid">
+            <!-- 卡片1 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-bs8rw0z.png" class="pr-card-img" alt="KOI比利时奶酪" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">KOI·比利时奶酪</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">七分糖</span>
+                  <span class="pr-tag pr-tag--ice">少冰</span>
+                  <span class="pr-tag pr-tag--add">波霸</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-j0if8y2.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">777777</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.2k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片2 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-1xfqoav.png" class="pr-card-img" alt="茉莉奶白莓莓白巧米麻薯" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">茉莉奶白·莓莓白巧米麻薯</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">三分糖</span>
+                  <span class="pr-tag pr-tag--ice">温热</span>
+                  <span class="pr-tag pr-tag--add">黑糖珍珠</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-53yutl6.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">一只草莓控</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">3.5k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片3 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-uyum1y2.png" class="pr-card-img" alt="古茗茉香云顶抹茶" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">古茗·茉香云顶抹茶</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">七分糖</span>
+                  <span class="pr-tag pr-tag--ice">少冰</span>
+                  <span class="pr-tag pr-tag--special">奶芙</span>
+                  <span class="pr-tag pr-tag--add">坚果碎</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-j7ljwqj.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">喝奶茶第一名</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.2k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片4 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-lr10ds5.png" class="pr-card-img" alt="一点点蔓越莓奶绿" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">一点点·蔓越莓奶绿</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">三分糖</span>
+                  <span class="pr-tag pr-tag--ice">少冰</span>
+                  <span class="pr-tag pr-tag--special">椰子冻</span>
+                  <span class="pr-tag pr-tag--add">小珍珠</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-10gggo0.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">点门掌门人</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.1k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片5 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-ybuqao6.png" class="pr-card-img" alt="李山山茶事陌上青提" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">李山山茶事·陌上青提</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">少糖</span>
+                  <span class="pr-tag pr-tag--ice">标准冰</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-e55w3os.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">aurora</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.2k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二行卡片 -->
+          <div class="pr-grid">
+            <!-- 卡片6 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-whs7oyb.png" class="pr-card-img" alt="山下奶市香草籽树莓芭乐冰" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">山下奶市·香草籽树莓芭乐冰</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">少糖</span>
+                  <span class="pr-tag pr-tag--ice">标准冰</span>
+                  <span class="pr-tag pr-tag--add">波霸</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-vuv4kdr.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">232</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-j61w7o8.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.1k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片7 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-p1rrs9q.png" class="pr-card-img" alt="一点点奶香普洱" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">一点点·奶香普洱</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">三分糖</span>
+                  <span class="pr-tag pr-tag--ice">温热</span>
+                  <span class="pr-tag pr-tag--add">波霸</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-8os0phf.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">圆圆璃</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">3.5k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片8 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-6uo8t4u.png" class="pr-card-img" alt="茉莉奶白抹茶白兰成酪乳" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">茉莉奶白·抹茶白兰成酪乳</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">少糖</span>
+                  <span class="pr-tag pr-tag--ice">奶冰</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-wnor2rv.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">抹茶甜袋</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.1k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片9 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-xa13vps.png" class="pr-card-img" alt="喜茶椰芒芒" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">喜茶·椰芒芒</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">少糖</span>
+                  <span class="pr-tag pr-tag--ice">少冰</span>
+                  <span class="pr-tag pr-tag--special">芋泥冻</span>
+                  <span class="pr-tag pr-tag--add">坚果碎</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-z16xou0.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">嘉茶死忠粉</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.1k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片10 -->
+            <div class="pr-card" onclick="openCard(this)">
+              <div class="pr-card-img-wrap">
+                <img src="./static/images/mou9e3rs-bv4265z.png" class="pr-card-img" alt="爷爷不泡茶兰香青柠" />
+              </div>
+              <div class="pr-card-body">
+                <p class="pr-card-name">爷爷不泡茶·兰香青柠</p>
+                <div class="pr-card-tags">
+                  <span class="pr-tag pr-tag--sugar">七分糖</span>
+                  <span class="pr-tag pr-tag--ice">少冰</span>
+                  <span class="pr-tag pr-tag--special">奶芙</span>
+                  <span class="pr-tag pr-tag--add">坚果碎</span>
+                </div>
+                <div class="pr-card-footer">
+                  <div class="pr-card-user">
+                    <img src="./static/images/mou9e3rs-yxvwycn.png" class="pr-card-avatar" alt="" />
+                    <span class="pr-card-username">奶茶大王</span>
+                  </div>
+                  <div class="pr-card-likes">
+                    <img src="./static/images/mou9e3r1-gbikfig.svg" class="pr-card-like-icon" alt="" />
+                    <span class="pr-card-like-num">1.1k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 加载更多 -->
+        <div class="pr-load-more">
+          <button class="pr-load-btn" onclick="loadMore(this)">加载更多精彩内容</button>
+        </div>
+      </div>
+
+      <!-- 页脚 -->
+      <div class="pr-footer">
+        <div class="pr-footer-logo">
+          <img src="./static/images/mou9e3rr-ir30nso.png" class="pr-footer-icon" alt="奶茶博物馆" />
+          <p class="pr-footer-name">奶茶博物馆</p>
+        </div>
+        <div class="pr-footer-about">
+          <p class="pr-footer-title">关于我们</p>
+          <p class="pr-footer-desc">关于奶茶的一切都在这座博物馆！<br />发现美味 · 记录生活 · 分享快乐</p>
+        </div>
+        <div class="pr-footer-contact">
+          <p class="pr-footer-title">联系我们</p>
+          <div class="pr-footer-icons">
+            <img src="./static/images/mou9e3r1-2b4t9te.svg" class="pr-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-4vmdcwg.svg" class="pr-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-7z5ee9b.svg" class="pr-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-d21x72i.svg" class="pr-footer-social" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 详情弹窗 -->
+    <div class="pr-modal" id="prModal" onclick="closeModal(event)">
+      <div class="pr-modal-content">
+        <button class="pr-modal-close" onclick="document.getElementById('prModal').style.display='none'">✕</button>
+        <img id="modalImg" src="" class="pr-modal-img" alt="" />
+        <div class="pr-modal-body">
+          <p class="pr-modal-name" id="modalName"></p>
+          <div class="pr-modal-tags" id="modalTags"></div>
+          <div class="pr-modal-actions">
+            <button class="pr-modal-like-btn" onclick="toggleLike(this)">
+              <img src="./static/images/mou9e3r1-gbikfig.svg" style="width:16px;height:16px;" alt="" />
+              点赞
+            </button>
+            <button class="pr-modal-collect-btn">收藏搭配</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openCard(card) {
+        const modal = document.getElementById('prModal');
+        const img = card.querySelector('.pr-card-img');
+        const name = card.querySelector('.pr-card-name');
+        const tags = card.querySelector('.pr-card-tags');
+        document.getElementById('modalImg').src = img.src;
+        document.getElementById('modalName').textContent = name.textContent;
+        document.getElementById('modalTags').innerHTML = tags.innerHTML;
+        modal.style.display = 'flex';
+      }
+
+      function closeModal(e) {
+        if (e.target === document.getElementById('prModal')) {
+          document.getElementById('prModal').style.display = 'none';
+        }
+      }
+
+      function toggleLike(btn) {
+        btn.classList.toggle('pr-modal-like-btn--liked');
+        btn.textContent = btn.classList.contains('pr-modal-like-btn--liked') ? '已点赞 ♥' : '点赞';
+      }
+
+      function loadMore(btn) {
+        btn.textContent = '加载中...';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = '已加载全部精彩内容';
+        }, 1200);
+      }
+    </script>
+  </body>
+</html>

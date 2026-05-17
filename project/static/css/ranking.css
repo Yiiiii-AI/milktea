@@ -1,0 +1,827 @@
+/* ===== 茶饮榜单页面样式 ===== */
+
+.rk-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff9f5;
+  width: 1440px;
+  min-height: 100vh;
+}
+
+/* ===== 导航栏 ===== */
+.rk-nav {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  align-self: stretch;
+  justify-content: space-between;
+  background: #ec9760;
+  padding: 15px 54px;
+  height: 72px;
+  overflow: hidden;
+}
+
+.rk-nav-logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.rk-nav-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 38px;
+}
+
+.rk-nav-name {
+  flex-shrink: 0;
+  line-height: 34px;
+  letter-spacing: 0;
+  color: #ffffff;
+  font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.rk-nav-links {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  column-gap: 36px;
+}
+
+.rk-nav-link {
+  flex-shrink: 0;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #ffffff;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.rk-nav-link:hover {
+  color: #3d2314;
+}
+
+.rk-nav-link--active {
+  color: #3d2314;
+  font-weight: 600;
+}
+
+.rk-nav-search {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 8px;
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 8px 20px;
+  width: 280px;
+  overflow: hidden;
+}
+
+.rk-nav-search-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.rk-nav-search-text {
+  flex-shrink: 0;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #c39f7e;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.rk-nav-actions {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.rk-nav-bell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
+.rk-nav-avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+/* ===== 主内容区 ===== */
+.rk-main {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+  padding: 40px 54px;
+  column-gap: 32px;
+}
+
+/* ===== 左侧榜单 ===== */
+.rk-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 24px;
+}
+
+/* 榜单标题 */
+.rk-header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.rk-header-title-row {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.rk-title {
+  margin: 0;
+  font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #3d2314;
+  letter-spacing: 0;
+}
+
+.rk-date-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  background: #ff7a30;
+  padding: 3px 10px;
+  color: #ffffff;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.rk-subtitle {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  color: #664b37;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.rk-subtitle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid #ff7a30;
+  color: #ff7a30;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* 统计数据 */
+.rk-stats {
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 32px;
+  box-shadow: 0 2px 12px rgba(68,43,21,0.06);
+}
+
+.rk-stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.rk-stat-divider {
+  width: 1px;
+  background: #f0e8e0;
+  margin: 0 24px;
+}
+
+.rk-stat-label {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 0;
+}
+
+.rk-stat-value {
+  font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #3d2314;
+  letter-spacing: 0;
+}
+
+.rk-stat-value--orange {
+  color: #ff7a30;
+}
+
+.rk-stat-value--countdown {
+  color: #3d2314;
+  font-variant-numeric: tabular-nums;
+}
+
+.rk-stat-change {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.rk-stat-change--up {
+  color: #10b981;
+}
+
+.rk-stat-note {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #999;
+}
+
+/* 榜单表格 */
+.rk-table {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(68,43,21,0.06);
+}
+
+.rk-table-header {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  background: #fdf6f0;
+  border-bottom: 1px solid #f0e8e0;
+}
+
+.rk-th {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #999;
+  font-weight: 500;
+}
+
+.rk-th-rank { width: 80px; }
+.rk-th-drink { flex: 1; }
+.rk-th-trend { width: 120px; text-align: center; }
+.rk-th-votes { width: 180px; text-align: right; }
+
+/* 榜单行 */
+.rk-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f9f3ee;
+  transition: background 0.2s;
+}
+
+.rk-row:hover {
+  background: #fffaf6;
+}
+
+.rk-row:last-of-type {
+  border-bottom: none;
+}
+
+.rk-row--top1 {
+  background: linear-gradient(90deg, #fff9f0 0%, #ffffff 100%);
+}
+
+/* 排名徽章 */
+.rk-rank {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.rk-rank-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-family: "Advent Pro", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.rk-rank-badge--1 {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  color: #fff;
+}
+
+.rk-rank-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rk-rank-badge--2 {
+  background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+  color: #fff;
+}
+
+.rk-rank-badge--3 {
+  background: linear-gradient(135deg, #f4a460, #cd7f32);
+  color: #fff;
+}
+
+.rk-rank-badge--n {
+  background: #f5f0ea;
+  color: #664b37;
+}
+
+.rk-new-dot {
+  position: absolute;
+  top: -4px;
+  right: 28px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f3566d;
+}
+
+/* 饮品信息 */
+.rk-drink-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.rk-drink-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rk-drink-detail {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.rk-drink-name {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3d2314;
+  letter-spacing: 0;
+}
+
+.rk-drink-tags {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.rk-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rk-tag--brand  { background: #fff0e8; color: #ff6b35; }
+.rk-tag--brand2 { background: #f0ebf8; color: #8b5cf6; }
+.rk-tag--brand3 { background: #e8f5f0; color: #10b981; }
+.rk-tag--brand4 { background: #fff8e8; color: #f59e0b; }
+.rk-tag--brand5 { background: #fce8f0; color: #e91e8c; }
+.rk-tag--desc   { background: #f5f0ea; color: #664b37; font-weight: 400; }
+.rk-tag--new    { background: #fff0e8; color: #ff6b35; }
+
+/* 热度趋势 */
+.rk-trend {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+}
+
+.rk-trend-up {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.rk-trend-down {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f3566d;
+}
+
+.rk-trend-new {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff7a30;
+}
+
+.rk-trend-label {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #999;
+}
+
+/* 票数与投票 */
+.rk-votes-col {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 16px;
+}
+
+.rk-votes-num {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.rk-votes {
+  font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #3d2314;
+}
+
+.rk-votes-unit {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #999;
+}
+
+.rk-vote-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  background: #ff7a30;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.rk-vote-btn:hover {
+  background: #e86a20;
+  transform: scale(1.03);
+}
+
+.rk-vote-btn--voted {
+  background: #d0c8c0 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* 加载更多 */
+.rk-load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.rk-load-btn {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  border: none;
+  background: transparent;
+  color: #664b37;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rk-load-btn:hover {
+  color: #ff7a30;
+}
+
+.rk-load-icon {
+  font-size: 18px;
+  color: #ff7a30;
+}
+
+/* ===== 右侧侧边栏 ===== */
+.rk-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.rk-chart-card,
+.rk-comment-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(68,43,21,0.06);
+}
+
+.rk-rule-card {
+  background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(108,99,255,0.25);
+}
+
+.rk-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.rk-card-title {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #3d2314;
+}
+
+.rk-social-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  background: #fff0e8;
+  padding: 2px 8px;
+  color: #ff7a30;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rk-chart-wrap {
+  width: 100%;
+  height: 180px;
+}
+
+.rk-chart-note {
+  margin-top: 10px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #999;
+  line-height: 1.5;
+}
+
+/* 评论 */
+.rk-comments {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.rk-comment {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 10px;
+}
+
+.rk-comment-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rk-comment-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.rk-comment-meta {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.rk-comment-name {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3d2314;
+}
+
+.rk-comment-time {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #999;
+}
+
+.rk-comment-text {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #664b37;
+  line-height: 1.6;
+}
+
+.rk-comment-more {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.rk-more-link {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #ff7a30;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.rk-more-link:hover {
+  color: #e86a20;
+}
+
+/* 投票守则 */
+.rk-rule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.rk-rule-title {
+  font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.rk-rule-icon {
+  flex-shrink: 0;
+}
+
+.rk-rules {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rk-rule-item {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 8px;
+}
+
+.rk-rule-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a3e635;
+  margin-top: 5px;
+}
+
+.rk-rule-text {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+}
+
+.rk-rule-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 14px;
+  color: #6c63ff;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rk-rule-btn:hover {
+  background: #f0eeff;
+}
+
+/* ===== 页脚 ===== */
+.rk-footer {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  align-self: stretch;
+  column-gap: 180px;
+  background: #ec9760;
+  padding: 24px 55px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.rk-footer-logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.rk-footer-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 44px;
+}
+
+.rk-footer-name {
+  flex-shrink: 0;
+  line-height: 34px;
+  letter-spacing: 0;
+  color: #fff3e6;
+  font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
+.rk-footer-about,
+.rk-footer-contact {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  row-gap: 12px;
+}
+
+.rk-footer-title {
+  flex-shrink: 0;
+  letter-spacing: 0;
+  color: #ffffff;
+  font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.rk-footer-desc {
+  flex-shrink: 0;
+  width: 340px;
+  letter-spacing: 0;
+  color: #ffead3;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.rk-footer-icons {
+  display: flex;
+  align-items: center;
+  column-gap: 28px;
+}
+
+.rk-footer-social {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}

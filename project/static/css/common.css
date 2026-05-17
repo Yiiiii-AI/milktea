@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial,
+    Helvetica, sans-serif;
+  background: #ffffff;
+}
+
+img {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-root {
+  margin: 0 auto;
+}

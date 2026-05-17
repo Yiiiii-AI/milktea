@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>奶茶博物馆 - 茶饮榜单</title>
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/ranking.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="rk-page page-root">
+      <!-- 顶部导航 -->
+      <div class="rk-nav">
+        <div class="rk-nav-logo">
+          <img src="./static/images/mou9e9di-x9rffmy.png" class="rk-nav-icon" alt="奶茶博物馆" />
+          <p class="rk-nav-name">茶饮榜单</p>
+        </div>
+        <div class="rk-nav-links">
+          <a class="rk-nav-link" href="./index.html">首页&nbsp;</a>
+          <a class="rk-nav-link" href="./map.html">地图&nbsp;</a>
+          <a class="rk-nav-link" href="./pairing.html">搭配&nbsp;</a>
+          <a class="rk-nav-link rk-nav-link--active" href="./ranking.html">排行榜&nbsp;</a>
+          <a class="rk-nav-link" href="./news.html">关于</a>
+        </div>
+        <div class="rk-nav-search">
+          <img src="./static/images/mou9e3r0-au2v2zb.svg" class="rk-nav-search-icon" alt="" />
+          <p class="rk-nav-search-text">搜索奶茶品牌或口味...</p>
+        </div>
+        <div class="rk-nav-actions">
+          <div class="rk-nav-bell">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V11c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="#664b37"/>
+            </svg>
+          </div>
+          <div class="rk-nav-avatar">
+            <img src="./static/images/mou9e3rs-j0if8y2.png" class="rk-nav-avatar-img" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 主内容区 -->
+      <div class="rk-main">
+        <!-- 左侧榜单区 -->
+        <div class="rk-left">
+          <!-- 榜单标题 -->
+          <div class="rk-header">
+            <div class="rk-header-title-row">
+              <h1 class="rk-title">本周最好喝 TOP10</h1>
+              <span class="rk-date-badge">2026.04.30 更新</span>
+            </div>
+            <p class="rk-subtitle">
+              <span class="rk-subtitle-icon">ℹ</span>
+              真实用户投票 热度实时更新 · 仅统计本周内新增票数
+            </p>
+          </div>
+
+          <!-- 统计数据 -->
+          <div class="rk-stats">
+            <div class="rk-stat-item">
+              <p class="rk-stat-label">今日累计投票</p>
+              <p class="rk-stat-value">42,891</p>
+              <p class="rk-stat-change rk-stat-change--up">↑ 较昨日 +12.4%</p>
+            </div>
+            <div class="rk-stat-divider"></div>
+            <div class="rk-stat-item">
+              <p class="rk-stat-label">参与品牌数</p>
+              <p class="rk-stat-value">156</p>
+              <p class="rk-stat-note">覆盖全网 95% 品牌</p>
+            </div>
+            <div class="rk-stat-divider"></div>
+            <div class="rk-stat-item">
+              <p class="rk-stat-label">本周最火口味</p>
+              <p class="rk-stat-value rk-stat-value--orange">山楂/陈皮系</p>
+              <p class="rk-stat-change rk-stat-change--up">趋势上升中</p>
+            </div>
+            <div class="rk-stat-divider"></div>
+            <div class="rk-stat-item">
+              <p class="rk-stat-label">下一次结算倒计时</p>
+              <p class="rk-stat-value rk-stat-value--countdown" id="countdown">14:22:02</p>
+              <p class="rk-stat-note">系统自动新数据</p>
+            </div>
+          </div>
+
+          <!-- 榜单表格 -->
+          <div class="rk-table">
+            <div class="rk-table-header">
+              <span class="rk-th rk-th-rank">排名</span>
+              <span class="rk-th rk-th-drink">饮品详情</span>
+              <span class="rk-th rk-th-trend">热度趋势</span>
+              <span class="rk-th rk-th-votes">总票数 / 操作</span>
+            </div>
+
+            <!-- 第1名 -->
+            <div class="rk-row rk-row--top1">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--1">
+                  <img src="./static/images/mou9e3rr-ir30nso.png" class="rk-rank-img" alt="" />
+                </div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-n61eg0x.png" class="rk-drink-thumb" alt="冰鲜柠檬水" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">冰鲜柠檬水</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand">蜜雪冰城</span>
+                    <span class="rk-tag rk-tag--desc">#经久不衰的经典</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-up">↑ 2</span>
+                <span class="rk-trend-label">排名上升</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">1245</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 1)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第2名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--2">2</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e9dj-jw0l5wv.png" class="rk-drink-thumb" alt="伯牙绝弦" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">伯牙绝弦</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand2">霸王茶姬</span>
+                    <span class="rk-tag rk-tag--desc">#原叶鲜奶茶天花板</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-down">↓ 1</span>
+                <span class="rk-trend-label">排名下降</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">1031</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 2)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第3名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--3">3</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-p42xf65.png" class="rk-drink-thumb" alt="多肉葡萄" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">多肉葡萄</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand3">喜茶</span>
+                    <span class="rk-tag rk-tag--desc">#果茶界流量担当</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-up">↑ 1</span>
+                <span class="rk-trend-label">排名上升</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">1006</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 3)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第4名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--n">4</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-xa13vps.png" class="rk-drink-thumb" alt="山楂奶绿" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">山楂奶绿</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand4">一点点</span>
+                    <span class="rk-tag rk-tag--desc">#酸甜开胃解腻神器</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-down">↓ 1</span>
+                <span class="rk-trend-label">排名下降</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">978</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 4)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第5名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--n">5</div>
+                <span class="rk-new-dot"></span>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-bv4265z.png" class="rk-drink-thumb" alt="霸气葡萄" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">霸气葡萄</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand5">奈雪的茶</span>
+                    <span class="rk-tag rk-tag--new">NEW! 新进榜</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-new">New</span>
+                <span class="rk-trend-label">Fastest Growing</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">920</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 5)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第6名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--n">6</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-uyum1y2.png" class="rk-drink-thumb" alt="茉莉奶白" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">茉莉奶白</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand3">茉莉奶白</span>
+                    <span class="rk-tag rk-tag--desc">#清香鲜奶茶</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-up">↑ 2</span>
+                <span class="rk-trend-label">排名上升</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">887</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 6)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第7名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--n">7</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-1xfqoav.png" class="rk-drink-thumb" alt="草莓奶茶" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">草莓奶茶</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand4">古茗</span>
+                    <span class="rk-tag rk-tag--desc">#草莓季限定</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-down">↓ 1</span>
+                <span class="rk-trend-label">排名下降</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">856</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 7)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第8名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--n">8</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-lr10ds5.png" class="rk-drink-thumb" alt="蔓越莓奶绿" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">蔓越莓奶绿</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand4">一点点</span>
+                    <span class="rk-tag rk-tag--desc">#酸甜清爽</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-up">↑ 3</span>
+                <span class="rk-trend-label">排名上升</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">821</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 8)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第9名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--n">9</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-6uo8t4u.png" class="rk-drink-thumb" alt="芋泥波波" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">芋泥波波</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand2">霸王茶姬</span>
+                    <span class="rk-tag rk-tag--desc">#芋泥控必点</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-down">↓ 2</span>
+                <span class="rk-trend-label">排名下降</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">789</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 9)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 第10名 -->
+            <div class="rk-row">
+              <div class="rk-rank">
+                <div class="rk-rank-badge rk-rank-badge--n">10</div>
+              </div>
+              <div class="rk-drink-info">
+                <img src="./static/images/mou9e3rs-6yeb866.png" class="rk-drink-thumb" alt="陈皮奶茶" />
+                <div class="rk-drink-detail">
+                  <p class="rk-drink-name">陈皮奶茶</p>
+                  <div class="rk-drink-tags">
+                    <span class="rk-tag rk-tag--brand5">沪上阿姨</span>
+                    <span class="rk-tag rk-tag--desc">#陈皮系新宠</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rk-trend">
+                <span class="rk-trend-up">↑ 4</span>
+                <span class="rk-trend-label">排名上升</span>
+              </div>
+              <div class="rk-votes-col">
+                <div class="rk-votes-num">
+                  <span class="rk-votes">754</span>
+                  <span class="rk-votes-unit">Votes</span>
+                </div>
+                <button class="rk-vote-btn" onclick="handleVote(this, 10)">投一票</button>
+              </div>
+            </div>
+
+            <!-- 加载更多 -->
+            <div class="rk-load-more">
+              <button class="rk-load-btn" onclick="loadMore()">
+                <span class="rk-load-icon">○</span> 加载更多饮品
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧侧边栏 -->
+        <div class="rk-sidebar">
+          <!-- TOP1趋势图 -->
+          <div class="rk-chart-card">
+            <div class="rk-card-header">
+              <p class="rk-card-title">TOP1投票趋势图</p>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M3 3v18h18" stroke="#999" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 16l4-4 4 4 4-6" stroke="#ff7a30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="rk-chart-wrap">
+              <canvas id="trendChart" width="320" height="180"></canvas>
+            </div>
+            <p class="rk-chart-note">* 数据根据过去24小时全平台实时交互生成，投票影响曲线走向。</p>
+          </div>
+
+          <!-- 最近评论互动 -->
+          <div class="rk-comment-card">
+            <div class="rk-card-header">
+              <p class="rk-card-title">最近评论互动</p>
+              <span class="rk-social-tag">Social</span>
+            </div>
+            <div class="rk-comments">
+              <div class="rk-comment">
+                <img src="./static/images/mou9e3rs-j0if8y2.png" class="rk-comment-avatar" alt="" />
+                <div class="rk-comment-body">
+                  <div class="rk-comment-meta">
+                    <span class="rk-comment-name">柠檬精小鬼</span>
+                    <span class="rk-comment-time">2分钟前</span>
+                  </div>
+                  <p class="rk-comment-text">蜜雪冰城真是夏日救星，4块钱的快乐谁懂啊！手动投一票 🍋</p>
+                </div>
+              </div>
+              <div class="rk-comment">
+                <img src="./static/images/mou9e3rs-53yutl6.png" class="rk-comment-avatar" alt="" />
+                <div class="rk-comment-body">
+                  <div class="rk-comment-meta">
+                    <span class="rk-comment-name">茶道少女</span>
+                    <span class="rk-comment-time">15分钟前</span>
+                  </div>
+                  <p class="rk-comment-text">霸王茶姬的伯牙绝弦茶味真的很醇，是我回购最多的单品。</p>
+                </div>
+              </div>
+              <div class="rk-comment">
+                <img src="./static/images/mou9e3rs-j7ljwqj.png" class="rk-comment-avatar" alt="" />
+                <div class="rk-comment-body">
+                  <div class="rk-comment-meta">
+                    <span class="rk-comment-name">奶茶中毒者</span>
+                    <span class="rk-comment-time">48分钟前</span>
+                  </div>
+                  <p class="rk-comment-text">喜茶的多肉葡萄YYDS，虽然价格贵一点，但是量是真的足。</p>
+                </div>
+              </div>
+            </div>
+            <div class="rk-comment-more">
+              <a href="javascript:void(0)" class="rk-more-link">查看全部 1,280 条评论</a>
+            </div>
+          </div>
+
+          <!-- 投票守则 -->
+          <div class="rk-rule-card">
+            <div class="rk-rule-header">
+              <p class="rk-rule-title">投票守则</p>
+              <div class="rk-rule-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <circle cx="18" cy="18" r="18" fill="rgba(255,255,255,0.2)"/>
+                  <path d="M12 18l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="rk-rules">
+              <div class="rk-rule-item">
+                <span class="rk-rule-dot"></span>
+                <p class="rk-rule-text">每位用户每天针对同一款饮品限投一次。</p>
+              </div>
+              <div class="rk-rule-item">
+                <span class="rk-rule-dot"></span>
+                <p class="rk-rule-text">系统实时监测刷票行为，一旦发现将扣除相应票数。</p>
+              </div>
+              <div class="rk-rule-item">
+                <span class="rk-rule-dot"></span>
+                <p class="rk-rule-text">周日 24:00 自动结算产生本周冠军。</p>
+              </div>
+            </div>
+            <button class="rk-rule-btn">了解防作弊机制</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 页脚 -->
+      <div class="rk-footer">
+        <div class="rk-footer-logo">
+          <img src="./static/images/mou9e3rr-ir30nso.png" class="rk-footer-icon" alt="奶茶博物馆" />
+          <p class="rk-footer-name">奶茶博物馆</p>
+        </div>
+        <div class="rk-footer-about">
+          <p class="rk-footer-title">关于我们</p>
+          <p class="rk-footer-desc">关于奶茶的一切都在这座博物馆！<br />发现美味 · 记录生活 · 分享快乐</p>
+        </div>
+        <div class="rk-footer-contact">
+          <p class="rk-footer-title">联系我们</p>
+          <div class="rk-footer-icons">
+            <img src="./static/images/mou9e3r1-2b4t9te.svg" class="rk-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-4vmdcwg.svg" class="rk-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-7z5ee9b.svg" class="rk-footer-social" alt="" />
+            <img src="./static/images/mou9e3r1-d21x72i.svg" class="rk-footer-social" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 倒计时
+      function updateCountdown() {
+        const el = document.getElementById('countdown');
+        if (!el) return;
+        const parts = el.textContent.split(':').map(Number);
+        let [h, m, s] = parts;
+        s--;
+        if (s < 0) { s = 59; m--; }
+        if (m < 0) { m = 59; h--; }
+        if (h < 0) { h = 23; m = 59; s = 59; }
+        el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+      }
+      setInterval(updateCountdown, 1000);
+
+      // 投票功能
+      const voted = {};
+      function handleVote(btn, id) {
+        if (voted[id]) {
+          alert('您今日已对该饮品投票，明天再来吧！');
+          return;
+        }
+        voted[id] = true;
+        btn.textContent = '已投票 ✓';
+        btn.classList.add('rk-vote-btn--voted');
+        btn.disabled = true;
+        const votesEl = btn.closest('.rk-votes-col').querySelector('.rk-votes');
+        if (votesEl) {
+          votesEl.textContent = (parseInt(votesEl.textContent.replace(',','')) + 1).toLocaleString();
+        }
+      }
+
+      // 加载更多
+      function loadMore() {
+        const btn = document.querySelector('.rk-load-btn');
+        btn.textContent = '加载中...';
+        setTimeout(() => { btn.textContent = '已加载全部'; btn.disabled = true; }, 1200);
+      }
+
+      // 趋势图
+      window.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+              data: [320, 480, 650, 820, 1050, 1180, 1245],
+              borderColor: '#ff7a30',
+              backgroundColor: 'rgba(255,122,48,0.10)',
+              borderWidth: 2.5,
+              tension: 0.45,
+              fill: true,
+              pointRadius: 3,
+              pointBackgroundColor: '#ff7a30'
+            }]
+          },
+          options: {
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { grid: { color: '#f0e8e0' }, ticks: { color: '#999', font: { size: 11 } } },
+              y: { grid: { color: '#f0e8e0' }, ticks: { color: '#999', font: { size: 11 } }, min: 0, max: 1500 }
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
